@@ -1,5 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VuexPersistence from 'vuex-persist'
+
+// modules
+import apps from './modules/apps'
 
 Vue.use(Vuex)
 
@@ -11,5 +15,7 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
-  }
+    apps
+  },
+  plugins: [new VuexPersistence().plugin]
 })
