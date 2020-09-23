@@ -1,6 +1,7 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { join } from 'path'
+import { app, protocol, BrowserWindow, ipcMain, dialog } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
@@ -22,7 +23,8 @@ function createWindow() {
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
-      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION
+      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
+      preload: join(__dirname, 'preload.js')
     }
   })
 
@@ -87,3 +89,22 @@ if (isDevelopment) {
     })
   }
 }
+
+ipcMain.on('confirmDelete', async (e, app) => {
+  let { response } = await dialog.showMessageBox({
+    message: `Are you sure you want to delete ${app.name}`,
+    buttons: ["Yes","No"]
+  })
+  e.returnValue = response === 0
+})
+
+ipcMain.on('appDirectory', async (e, app) => {
+  let { canceled, filePaths } = await dialog.showOpenDialog({
+    title: `Choose Directory for ${app.name}`,
+    properties: [
+      'openDirectory',
+      'createDirectory'
+    ]
+  })
+  e.returnValue = canceled ? null : filePaths[0]
+})
