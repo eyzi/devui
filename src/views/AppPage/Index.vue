@@ -7,10 +7,18 @@
 		</div>
 		<div class="app-info">
 			<AppDirectory :appName="app.name" :dir="sandboxAppDir" @change="updateAppDirectory" />
+			
+			<div style="margin:1em 0.5em;">
+				<div><strong>Build Settings</strong></div>
+				<div>Itch ID: <input v-model="sandboxApp.itchId" placeholder="eg: user/appname" /></div>
+				<div>Discord ID: <input v-model="sandboxApp.discordId" placeholder="eg: 1234567890" /></div>
+				<div>Steam ID: <input v-model="sandboxApp.steamId" placeholder="eg: 123456" /></div>
+			</div>
 		</div>
 		<div class="actions">
 			<button @click="saveModifiedApp">Save</button>
 			<button v-show="!appUnmodified" @click="resetSandbox">Reset</button>
+			<button @click="buildApp">Build</button>
 			<button @click="deleteApp">Delete</button>
 		</div>
 	</div>
@@ -104,6 +112,9 @@ export default {
 		},
 		updateAppDirectory(dir) {
 			this.sandboxApp.dir = dir
+		},
+		buildApp() {
+			console.log("### BUILD")
 		}
 	}
 }
