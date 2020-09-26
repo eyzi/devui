@@ -11,7 +11,7 @@ const getters = {
 
 const actions = {
 	addApp({commit}, name) {
-		commit("ADD_APP", {id:uuid(),name})
+		commit("ADD_APP", {id:uuid(),name,dir:null,options:{}})
 	},
 	updateApp({commit}, app) {
 		commit("UPDATE_APP", app)

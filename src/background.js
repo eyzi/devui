@@ -2,6 +2,7 @@
 
 import { join } from 'path'
 import { app, protocol, BrowserWindow, ipcMain, dialog } from 'electron'
+import { exec } from 'child_process'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
@@ -92,7 +93,8 @@ if (isDevelopment) {
 
 ipcMain.on('confirmDelete', async (e, app) => {
   let { response } = await dialog.showMessageBox({
-    message: `Are you sure you want to delete ${app.name}`,
+    title: `Delete ${app.name}`,
+    message: `Are you sure you want to delete ${app.name}?`,
     buttons: ["Yes","No"]
   })
   e.returnValue = response === 0
@@ -107,4 +109,8 @@ ipcMain.on('appDirectory', async (e, app) => {
     ]
   })
   e.returnValue = canceled ? null : filePaths[0]
+})
+
+ipcMain.on('openDirectory', (e, dir) => {
+  exec(`start "" "${ dir }"`)
 })

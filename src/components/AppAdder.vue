@@ -10,8 +10,14 @@
 			/>
 		</div>
 		<div v-show="newAppName">
-			<button class="action-btn" @click="clearAppName">Clear</button>
-			<button class="action-btn" @click="addNewApp">Add</button>
+			<button class="action-btn" @click="clearAppName">
+				<div class="btn-label">Clear</div>
+				<div class="btn-shortcut">ESC</div>
+			</button>
+			<button class="action-btn" @click="addNewApp">
+				<div class="btn-label">Add</div>
+				<div class="btn-shortcut">ENTER</div>
+			</button>
 		</div>
 	</div>
 </template>
@@ -48,7 +54,13 @@ export default {
 		border: none;
 		margin: 0.2em;
 		padding: 0.2em 0.5em;
-		border-bottom: 1px solid black;
+		border-bottom: 1px solid rgb(224, 224, 224);
+	}
+
+	.action-input:active,
+	.action-input:focus {
+		border-bottom: 1px solid rgb(182, 91, 218);
+		outline: none;
 	}
 
 	.action-btn {
@@ -61,5 +73,10 @@ export default {
 			background-color: rgb(185, 185, 185);
 		}
 	}
+}
+
+.btn-shortcut {
+	color: rgb(54, 98, 163);
+	font-size: 0.7em;
 }
 </style>
