@@ -9,10 +9,11 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 
 import ButlerClient from './sdk/itch/client/Client'
 import DispatchClient from './sdk/discord/client/Client'
+import SteamClient from './sdk/steam/client/Client'
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let win
+let win, steamWin
 let vButler, vDispatch, vSteamCMD
 
 // Scheme must be registered before the app is ready
@@ -23,9 +24,23 @@ protocol.registerSchemesAsPrivileged([
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    title: 'DevUI',
     width: 800,
     height: 600,
+    show: false,
+    title: 'DevUI',
+    webPreferences: {
+      // Use pluginOptions.nodeIntegration, leave this alone
+      // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
+      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
+      preload: join(__dirname, 'preload.js')
+    }
+  })
+
+  steamWin = new BrowserWindow({
+    width: 400,
+    height: 200,
+    show: false,
+    title: 'Steam',
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
@@ -37,6 +52,7 @@ function createWindow() {
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
+    steamWin.loadURL(`${process.env.WEBPACK_DEV_SERVER_URL}steam`)
     if (!process.env.IS_TEST) win.webContents.openDevTools()
   } else {
     createProtocol('app')
@@ -44,8 +60,27 @@ function createWindow() {
     win.loadURL('app://./index.html')
   }
 
+  win.on('page-title-updated', (evt) => {
+    evt.preventDefault();
+  });
+  steamWin.on('page-title-updated', (evt) => {
+    evt.preventDefault();
+  });
+
+  win.webContents.on('did-finish-load', function() {
+    win.show();
+  });
+
   win.on('closed', () => {
     win = null
+    steamWin = null
+  })
+  steamWin.on('close', (event) => {
+    if (steamWin) {
+      steamWin.webContents.send('clear')
+      steamWin.hide()
+    }
+    event.preventDefault();
   })
 }
 
@@ -72,6 +107,18 @@ async function clientInit() {
   })
   vDispatch.on('build-uploaded', data => {
     win.webContents.send('discordBuildUploaded', data)
+  })
+
+  /** STEAM */
+  vSteamCMD = new SteamClient(app.getAppPath())
+  vSteamCMD.on('build-pushing', data => {
+    win.webContents.send('steamBuildStarted', data)
+  })
+  vSteamCMD.on('build-progress', data => {
+    win.webContents.send('steamBuildProgress', data)
+  })
+  vSteamCMD.on('build-uploaded', data => {
+    win.webContents.send('steamBuildUploaded', data)
   })
 }
 clientInit()
@@ -217,4 +264,19 @@ ipcMain.on('buildDiscord', (e, app) => {
   vDispatch.push(app.dir, option.id, option.configFile).catch(e => {
     console.error(e)
   })
+})
+
+ipcMain.on('buildSteam', (e, app) => {
+  let option = app.options['STEAM']
+  if (!option || !option.active) return
+
+  steamWin.webContents.send('clear')
+  steamWin.webContents.send('gameId', option.id)
+  steamWin.webContents.send('buildFile', option.buildFile)
+  steamWin.show()
+})
+
+ipcMain.on('steamLoginBuild', (e, {gameId, username, password, code, buildFile}) => {
+  steamWin.close()
+  vSteamCMD.push(gameId, username, password, code, buildFile)
 })

@@ -1,0 +1,24 @@
+
+
+[2020-09-27 09:12:01] Loaded 0 apps from install folder "C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\steamapps\appmanifest_*.acf".
+
+
+[2020-09-27 09:16:58] Loaded 0 apps from install folder "C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\steamapps\appmanifest_*.acf".
+
+
+[2020-09-27 09:19:41] Loaded 0 apps from install folder "C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\steamapps\appmanifest_*.acf".
+
+
+[2020-09-27 09:24:48] Loaded 0 apps from install folder "C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\steamapps\appmanifest_*.acf".
+
+
+[2020-09-27 09:25:58] Loaded 0 apps from install folder "C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\steamapps\appmanifest_*.acf".
+
+
+[2020-09-27 09:28:50] Loaded 0 apps from install folder "C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\steamapps\appmanifest_*.acf".
+
+
+[2020-09-27 09:31:35] Loaded 0 apps from install folder "C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\steamapps\appmanifest_*.acf".
+
+
+[2020-09-27 09:37:12] Loaded 0 apps from install folder "C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\steamapps\appmanifest_*.acf".

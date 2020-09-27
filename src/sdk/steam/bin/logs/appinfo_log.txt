@@ -1,0 +1,57 @@
+
+
+[2020-09-27 09:12:06] RequestAppInfoUpdate: nNumAppIDs 1
+[2020-09-27 09:12:06] Change number 0->9586931, apps: 0/0, packages: 0/0
+[2020-09-27 09:12:06] Requesting 1 apps, 2105 packages (meta data, 1024 prev attempts)
+[2020-09-27 09:12:07] Requesting 1 apps, 2105 packages (full data, 1024 prev attempts)
+[2020-09-27 09:12:09] UpdatesJob: finished OK, nAppsUpdated 1 (3 KB), nPackagesUpdated 2105 (309 KB)
+[2020-09-27 09:12:09] Requesting 2421 apps, 0 packages (meta data, 1024 prev attempts)
+[2020-09-27 09:12:11] Requested 68 app access tokens, 58 received, 10 denied
+[2020-09-27 09:12:11] Updated SHAs with 58 new access tokens
+[2020-09-27 09:12:15] Downloaded 74 apps via HTTP, 2657 KB (588 KB compressed)
+[2020-09-27 09:12:15] Requesting 2347 apps, 0 packages (full data, 1024 prev attempts)
+[2020-09-27 09:12:24] Starting async write C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin/appcache/appinfo.vdf (3915376 bytes)
+[2020-09-27 09:12:34] UpdatesJob: finished OK, nAppsUpdated 2421 (8159 KB), nPackagesUpdated 0 (0 KB)
+[2020-09-27 09:12:40] Starting async write C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin/appcache/appinfo.vdf (6060562 bytes)
+
+
+[2020-09-27 09:17:02] RequestAppInfoUpdate: nNumAppIDs 1
+[2020-09-27 09:17:02] Packages changed: 
+[2020-09-27 09:17:02] Apps changed: 
+[2020-09-27 09:17:02] Change number 9586931->9586951, apps: 0/15, packages: 0/3
+[2020-09-27 09:17:02] Requesting 11 apps, 0 packages (meta data, 1024 prev attempts)
+[2020-09-27 09:17:03] Requested 10 app access tokens, 0 received, 10 denied
+[2020-09-27 09:17:03] UpdatesJob: finished OK, nAppsUpdated 0 (0 KB), nPackagesUpdated 0 (0 KB)
+
+
+[2020-09-27 09:19:45] RequestAppInfoUpdate: nNumAppIDs 1
+[2020-09-27 09:19:45] Apps changed: 
+[2020-09-27 09:19:45] Change number 9586951->9586961, apps: 0/9, packages: 0/0
+[2020-09-27 09:19:45] Requesting 11 apps, 0 packages (meta data, 1024 prev attempts)
+[2020-09-27 09:19:45] Requested 10 app access tokens, 0 received, 10 denied
+[2020-09-27 09:19:45] UpdatesJob: finished OK, nAppsUpdated 0 (0 KB), nPackagesUpdated 0 (0 KB)
+
+
+[2020-09-27 09:26:01] RequestAppInfoUpdate: nNumAppIDs 1
+[2020-09-27 09:26:02] Apps changed: 
+[2020-09-27 09:26:02] Change number 9586961->9586978, apps: 0/15, packages: 0/0
+[2020-09-27 09:26:02] Requesting 11 apps, 0 packages (meta data, 1024 prev attempts)
+[2020-09-27 09:26:02] Requested 10 app access tokens, 0 received, 10 denied
+[2020-09-27 09:26:02] UpdatesJob: finished OK, nAppsUpdated 0 (0 KB), nPackagesUpdated 0 (0 KB)
+
+
+[2020-09-27 09:28:53] RequestAppInfoUpdate: nNumAppIDs 1
+[2020-09-27 09:28:54] Apps changed: 
+[2020-09-27 09:28:54] Change number 9586978->9586982, apps: 0/3, packages: 0/0
+[2020-09-27 09:28:54] Requesting 11 apps, 0 packages (meta data, 1024 prev attempts)
+[2020-09-27 09:28:54] Requested 10 app access tokens, 0 received, 10 denied
+[2020-09-27 09:28:54] UpdatesJob: finished OK, nAppsUpdated 0 (0 KB), nPackagesUpdated 0 (0 KB)
+
+
+[2020-09-27 09:31:38] RequestAppInfoUpdate: nNumAppIDs 1
+[2020-09-27 09:31:39] Packages changed: 
+[2020-09-27 09:31:39] Apps changed: 
+[2020-09-27 09:31:39] Change number 9586982->9586989, apps: 0/7, packages: 0/1
+[2020-09-27 09:31:39] Requesting 11 apps, 0 packages (meta data, 1024 prev attempts)
+[2020-09-27 09:31:39] Requested 10 app access tokens, 0 received, 10 denied
+[2020-09-27 09:31:39] UpdatesJob: finished OK, nAppsUpdated 0 (0 KB), nPackagesUpdated 0 (0 KB)

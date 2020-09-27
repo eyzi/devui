@@ -33,8 +33,8 @@
 				</div>
 			</div>
 			<div v-if="building" class="building-info">
-				<label for="itch-build">Building:</label>
-				<progress id="itch-build" :value="building" max="100">{{ building }}%</progress>
+				<label for="build">Building:</label>
+				<progress id="build" :value="building" max="100">{{ building }}%</progress>
 			</div>
 		</div>
 	</div>

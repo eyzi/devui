@@ -1,0 +1,98 @@
+
+
+[2020-09-27 09:12:01] Failed to read store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf.tmp'
+[2020-09-27 09:12:01] Failed to read store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf.tmp'
+[2020-09-27 09:12:02] Failed to read store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf.tmp'
+[2020-09-27 09:12:02] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:12:03] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:12:06] Failed to read store 'userlocal' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf.tmp'
+[2020-09-27 09:12:06] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:12:06] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:12:07] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:12:07] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:12:10] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:12:12] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:12:36] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:12:40] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+
+
+[2020-09-27 09:16:58] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:16:58] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:16:59] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:16:59] Loaded store 'userlocal' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf' successfully
+[2020-09-27 09:16:59] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:17:00] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:17:02] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:17:02] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:17:03] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:17:03] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:17:43] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+
+
+[2020-09-27 09:19:41] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:19:41] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:19:42] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:19:42] Loaded store 'userlocal' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf' successfully
+[2020-09-27 09:19:42] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:19:43] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:19:44] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:19:45] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:19:45] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:19:46] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:19:47] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:20:19] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+
+
+[2020-09-27 09:24:48] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:24:48] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+
+
+[2020-09-27 09:25:58] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:25:58] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:25:58] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:25:58] Loaded store 'userlocal' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf' successfully
+[2020-09-27 09:25:59] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:26:00] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:26:00] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:26:02] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:26:02] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:26:03] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:26:04] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:26:37] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+
+
+[2020-09-27 09:28:50] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:28:50] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:28:50] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:28:50] Loaded store 'userlocal' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf' successfully
+[2020-09-27 09:28:51] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:28:52] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:28:53] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:28:54] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:28:54] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:28:55] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:29:28] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+
+
+[2020-09-27 09:31:35] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:31:35] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:31:35] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:31:35] Loaded store 'userlocal' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf' successfully
+[2020-09-27 09:31:36] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:31:37] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:31:38] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:31:39] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:31:40] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:31:40] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:32:13] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+
+
+[2020-09-27 09:37:12] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:37:12] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:37:12] Loaded store 'install' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf' successfully
+[2020-09-27 09:37:12] Loaded store 'userlocal' from 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf' successfully
+[2020-09-27 09:37:13] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:37:14] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:37:14] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'
+[2020-09-27 09:37:19] Flushed store 'userlocal' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\userdata\127548173\config\localconfig.vdf'
+[2020-09-27 09:37:19] Flushed store 'install' to 'C:\Users\eyzif\Documents\Computer\Projects\devui\src\sdk\steam\bin\config\config.vdf'

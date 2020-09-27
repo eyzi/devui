@@ -5,25 +5,46 @@
 			<span>{{ label }}</span>
 		</div>
 		<div v-if="isActive">
-			{{ label }} OPTION
-			<input
-				class="purple-focus"
-				v-model="option.id"
-				placeholder="App Id"
-				@change="save"
-			/>
+			<div>
+				{{ label }} OPTION
+				<input
+					class="purple-focus"
+					v-model="option.id"
+					placeholder="App Id"
+					@change="save"
+				/>
+			</div>
+			<div>
+				<span>Build File: </span>
+				<DirectorySelect
+					:dir="option.buildFile"
+					:isFolder="false"
+					:selectTitle="`Select build file (*.vdf) for ${app.name}`"
+					@select="selectBuildFile"
+					@clear="clearBuildFile"
+				/>
+			</div>
+			<div v-if="building" class="building-info">
+				<label for="build">Building:</label>
+				<progress id="build" :value="building" max="100">{{ building }}%</progress>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
+import DirectorySelect from '@/components/DirectorySelect.vue';
 export default {
+	components: {
+		DirectorySelect
+	},
 	props: [
 		'app'
 	],
 	data: ()=>({
-		label: 'STEAM'
+		label: 'STEAM',
+		building: null
 	}),
 	mounted() {
 		if (!this.app.options[this.label])
@@ -31,6 +52,20 @@ export default {
 
 		if (typeof this.option.active === 'undefined')
 			this.$set(this.app.options[this.label], 'active', false)
+		
+		window.ipcRenderer.on('steamBuildStarted', (e, data) => {
+			if (data.gameId !== this.option.id) return
+			this.building = 0
+		})
+		window.ipcRenderer.on('steamBuildProgress', (e, data) => {
+			if (data.gameId !== this.option.id) return
+			console.log(data.percent)
+			this.building = data.percent
+		})
+		window.ipcRenderer.on('steamBuildUploaded', (e, data) => {
+			if (data.gameId !== this.option.id) return
+			this.building = null
+		})
 	},
 	computed: {
 		option() {
@@ -49,6 +84,14 @@ export default {
 		},
 		toggleActive(e) {
 			this.$set(this.app.options[this.label], 'active', e.target.checked)
+			this.save()
+		},
+		selectBuildFile(dir) {
+			this.$set(this.app.options[this.label], 'buildFile', dir)
+			this.save()
+		},
+		clearBuildFile() {
+			this.$set(this.app.options[this.label], 'buildFile', null)
 			this.save()
 		}
 	}

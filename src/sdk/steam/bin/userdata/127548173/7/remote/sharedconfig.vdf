@@ -1,0 +1,183 @@
+"UserRoamingConfigStore"
+{
+	"Software"
+	{
+		"valve"
+		{
+			"steam"
+			{
+				"SSAVersion"		"3"
+				"DesktopShortcutCheck"		"0"
+				"StartMenuShortcutCheck"		"0"
+				"SteamDefaultDialog"		"#app_games"
+				"SurveyDate"		"2018-06-02"
+				"friendsui"
+				{
+					"FriendsUIJSON"		"{\"bNotifications_ShowIngame\":false,\"bNotifications_ShowOnline\":false,\"bNotifications_ShowMessage\":true,\"bNotifications_EventsAndAnnouncements\":false,\"bSounds_PlayIngame\":false,\"bSounds_PlayOnline\":false,\"bSounds_PlayMessage\":true,\"bSounds_EventsAndAnnouncements\":false,\"bAlwaysNewChatWindow\":false,\"bForceAlphabeticFriendSorting\":true,\"nChatFlashMode\":0,\"bRememberOpenChats\":true,\"bCompactQuickAccess\":false,\"bCompactFriendsList\":false,\"bNotifications_ShowChatRoomNotification\":false,\"bSounds_PlayChatRoomNotification\":false,\"bHideOfflineFriendsInTagGroups\":false,\"bHideCategorizedFriends\":false,\"bCategorizeInGameFriendsByGame\":false,\"nChatFontSize\":1,\"b24HourClock\":true,\"bDoNotDisturbMode\":false,\"bDisableEmbedInlining\":false,\"bSignIntoFriends\":true,\"bDisableSpellcheck\":false,\"bDisableRoomEffects\":false,\"bAnimatedAvatars\":true,\"featuresEnabled\":{\"DoNotDisturb\":1,\"LoaderWindowSynchronization\":1,\"NonFriendMessageHandling\":1,\"NewVoiceHotKeyState\":1,\"PersonaNotifications\":1,\"ServerVirtualizedMemberLists\":1,\"SteamworksChatAPI\":1},\"bSingleWindowMode\":false}"
+				}
+				"Apps"
+				{
+					"205790"
+					{
+						"hidden"		"1"
+					}
+					"331670"
+					{
+					}
+					"686760"
+					{
+						"tags"
+						{
+							"0"		"Moonlit"
+						}
+					}
+					"1409610"
+					{
+						"tags"
+						{
+							"0"		"Moonlit"
+						}
+					}
+				}
+				"ShowScreenshotManager"		"0"
+			}
+		}
+	}
+	"Web"
+	{
+		"WebFav0_URL"		"https://www.google.com/"
+		"WebFav0_Name"		"Google"
+		"WebFav1_URL"		"http://www.youtube.com/"
+		"WebFav1_Name"		"YouTube"
+		"WebFav2_URL"		"http://www.twitter.com/"
+		"WebFav2_Name"		"Twitter"
+		"WebFav3_URL"		"http://www.facebook.com/"
+		"WebFav3_Name"		"Facebook"
+		"WebFav4_URL"		"http://www.reddit.com/"
+		"WebFav4_Name"		"Reddit"
+		"WebRecent0_URL"		"https://steamcommunity.com/market/search?q=&appid=730&lock_appid=730"
+		"WebRecent0_Name"		"Steam Community Market :: Showing results for: Counter-Strike: Global Offensive"
+		"WebFrequent0_URL"		"https://www.google.ca/?gfe_rd=cr&ei=skf_VvLXE6zU8geYpoKgBQ"
+		"WebFrequent0_Name"		"Google"
+		"WebFrequent0_Access"		"1"
+		"WebRecent1_URL"		"https://www.google.ca/?gfe_rd=cr&ei=skf_VvLXE6zU8geYpoKgBQ"
+		"WebRecent1_Name"		"Google"
+		"WebFrequent1_URL"		"https://www.netflix.com/ca/"
+		"WebFrequent1_Name"		"Netflix - Watch TV Shows Online, Watch Movies Online"
+		"WebFrequent1_Access"		"1"
+		"WebFav5_URL"		"https://www.netflix.com/browse"
+		"WebFav5_Name"		"Netflix"
+		"WebRecent2_URL"		"https://www.netflix.com/ca/"
+		"WebRecent2_Name"		"Netflix - Watch TV Shows Online, Watch Movies Online"
+		"WebFrequent2_URL"		"https://steamcommunity.com/market/search?q=&appid=730&lock_appid=730"
+		"WebFrequent2_Name"		"Steam Community Market :: Showing results for: Counter-Strike: Global Offensive"
+		"WebFrequent2_Access"		"1"
+	}
+	"controller_config"
+	{
+		"714100"
+		{
+			"usetime"		"931.4072265625"
+		}
+		"250820"
+		{
+			"usetime"		"147.974853515625"
+		}
+		"730"
+		{
+			"usetime"		"172529.0625"
+		}
+		"234630"
+		{
+			"usetime"		"4752.39697265625"
+		}
+		"413090"
+		{
+			"usetime"		"0"
+		}
+		"443510"
+		{
+			"usetime"		"0"
+		}
+		"469990"
+		{
+			"usetime"		"207.5234375"
+		}
+		"477870"
+		{
+			"usetime"		"24276.896484375"
+		}
+		"20920"
+		{
+			"usetime"		"1871.359375"
+		}
+		"244210"
+		{
+			"usetime"		"813.69921875"
+		}
+		"439350"
+		{
+			"usetime"		"11521"
+		}
+		"886030"
+		{
+			"usetime"		"5202.771484375"
+		}
+		"690510"
+		{
+			"usetime"		"2951.65625"
+		}
+		"573770"
+		{
+			"usetime"		"1487.950927734375"
+		}
+		"582660"
+		{
+			"usetime"		"18594.697265625"
+		}
+		"628730"
+		{
+			"usetime"		"1199.609375"
+		}
+		"585410"
+		{
+			"usetime"		"115456.6640625"
+		}
+		"520910"
+		{
+			"usetime"		"6662.392578125"
+		}
+		"215100"
+		{
+			"usetime"		"24356.7421875"
+		}
+		"monster hunter village"
+		{
+			"usetime"		"5733.9921875"
+		}
+		"759970"
+		{
+			"usetime"		"77.5908203125"
+		}
+		"326480"
+		{
+			"usetime"		"1763.0643310546875"
+		}
+		"876330"
+		{
+			"usetime"		"2677.828125"
+		}
+		"487430"
+		{
+			"usetime"		"10373.7109375"
+		}
+	}
+	"JSClientStorage"
+	{
+		"spotlight.review.754810"
+		{
+			"rgPromptDismissals"		"1"
+			"bWasAskedToRevise"		"0"
+		}
+	}
+}
