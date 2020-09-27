@@ -10,13 +10,11 @@ class Client extends EventEmitter {
 		super()
 		this.appPath = appPath
 		this.bin = this.getBin(arch())
-		this.processes = new Map()
-
 		this.loggedIn = false
-
+		this.processes = new Map()
 		this.activeBuild = new Map()
-
 		this.getVersion()
+		this.checkLogin()
 	}
 
 	runCommand(...args) {
@@ -50,7 +48,7 @@ class Client extends EventEmitter {
 			cmd.on('process-data', data => {
 				version += data
 			})
-			cmd.on('process-close', data => {
+			cmd.on('process-close', _ => {
 				let versionObj = version.match(regex)
 				this.version = versionObj.groups.version
 				this.versionDate = versionObj.groups.date
@@ -59,6 +57,10 @@ class Client extends EventEmitter {
 				resolve(versionObj.groups)
 			})
 		});
+	}
+
+	checkLogin() {
+		this.login()
 	}
 
 	logout() {
@@ -125,8 +127,6 @@ class Client extends EventEmitter {
 					this.activeBuild.set(gameId, { gameId })
 					this.emit('build-uploaded', this.activeBuild.get(gameId))
 				}
-
-				console.log(sdata)
 			})
 
 			cmd.on('process-close', _ => {

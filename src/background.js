@@ -1,6 +1,6 @@
 'use strict'
 
-import { join } from 'path'
+import { join, parse } from 'path'
 import { app, protocol, BrowserWindow, ipcMain, dialog } from 'electron'
 import { exec } from 'child_process'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
@@ -8,6 +8,7 @@ import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 import ButlerClient from './sdk/itch/client/Client'
+import DispatchClient from './sdk/discord/client/Client'
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -49,6 +50,7 @@ function createWindow() {
 }
 
 async function clientInit() {
+  /** BUTLER */
   vButler = new ButlerClient(app.getAppPath())
   vButler.on('build-pushing', data => {
     win.webContents.send('itchBuildStarted', data)
@@ -58,6 +60,18 @@ async function clientInit() {
   })
   vButler.on('build-uploaded', data => {
     win.webContents.send('itchBuildUploaded', data)
+  })
+
+  /** DISPATCH */
+  vDispatch = new DispatchClient(app.getAppPath())
+  vDispatch.on('build-pushing', data => {
+    win.webContents.send('discordBuildStarted', data)
+  })
+  vDispatch.on('build-progress', data => {
+    win.webContents.send('discordBuildProgress', data)
+  })
+  vDispatch.on('build-uploaded', data => {
+    win.webContents.send('discordBuildUploaded', data)
   })
 }
 clientInit()
@@ -130,8 +144,28 @@ ipcMain.on('appDirectory', async (e, app) => {
   e.returnValue = canceled ? null : filePaths[0]
 })
 
-ipcMain.on('openDirectory', (e, dir) => {
-  exec(`start "" "${ dir }"`)
+ipcMain.on('openDialog', async (e, options) => {
+  let properties = []
+  if (options.isFolder) {
+    properties.push('openDirectory')
+    properties.push('createDirectory')
+  } else {
+    properties.push('openFile')
+  }
+
+  let { canceled, filePaths } = await dialog.showOpenDialog({
+    title: options.title,
+    properties
+  })
+  e.returnValue = canceled ? null : filePaths[0]
+})
+
+ipcMain.on('openDirectory', (e, options) => {
+  if (options.isFolder) {
+    exec(`start "" "${ options.dir }"`)
+  } else {
+    exec(`start "" "${ parse(options.dir).dir }"`)
+  }
 })
 
 ipcMain.on('itchGetLogin', _ => {
@@ -158,6 +192,29 @@ ipcMain.on('buildItch', (e, app) => {
   if (option['arch-linux']) arches.push('linux')
 
   vButler.push(app.dir, option.id, arches).catch(e => {
+    console.error(e)
+  })
+})
+
+ipcMain.on('discordGetLogin', _ => {
+  win.webContents.send('discordGetLogin', vDispatch.loggedIn)
+})
+
+ipcMain.on('discordLogout', async _ => {
+  await vDispatch.logout()
+  win.webContents.send('discordGetLogin', vDispatch.loggedIn)
+})
+
+ipcMain.on('discordLogin', async _ => {
+  await vDispatch.login()
+  win.webContents.send('discordGetLogin', vDispatch.loggedIn)
+})
+
+ipcMain.on('buildDiscord', (e, app) => {
+  let option = app.options['DISCORD']
+  if (!option || !option.active) return
+
+  vDispatch.push(app.dir, option.id, option.configFile).catch(e => {
     console.error(e)
   })
 })

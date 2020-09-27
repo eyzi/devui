@@ -20,7 +20,13 @@
 					placeholder="App Name"
 				/>
 			</div>
-			<AppDirectory :app="app" />
+			<DirectorySelect
+				:dir="app.dir"
+				:isFolder="true"
+				:selectTitle="`Select Directory for ${app.name}`"
+				@select="selectAppDir"
+				@clear="clearAppDir"
+			/>
 			<div class="app-options">
 				<OptionItch :app="app" />
 				<OptionDiscord :app="app" />
@@ -36,13 +42,13 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import AppDirectory from '@/components/AppDirectory.vue';
+import DirectorySelect from '@/components/DirectorySelect.vue';
 import OptionItch from '@/components/Options/Itch.vue';
 import OptionDiscord from '@/components/Options/Discord.vue';
 import OptionSteam from '@/components/Options/Steam.vue';
 export default {
 	components: {
-		AppDirectory,
+		DirectorySelect,
 		OptionItch,
 		OptionDiscord,
 		OptionSteam
@@ -94,6 +100,14 @@ export default {
 			if (oSteam && oSteam.active) {
 				window.ipcRenderer.send('buildSteam', this.app)
 			}
+		},
+		selectAppDir(dir) {
+			this.$set(this.app, 'dir', dir)
+			this.save()
+		},
+		clearAppDir() {
+			this.$set(this.app, 'dir', null)
+			this.save()
 		}
 	}
 }
