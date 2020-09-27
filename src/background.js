@@ -7,9 +7,12 @@ import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
+import ButlerClient from './sdk/itch/client/Client'
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
+let vButler, vDispatch, vSteamCMD
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
@@ -19,6 +22,7 @@ protocol.registerSchemesAsPrivileged([
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
+    title: 'DevUI',
     width: 800,
     height: 600,
     webPreferences: {
@@ -43,6 +47,20 @@ function createWindow() {
     win = null
   })
 }
+
+async function clientInit() {
+  vButler = new ButlerClient(app.getAppPath())
+  vButler.on('build-pushing', data => {
+    win.webContents.send('itchBuildStarted', data)
+  })
+  vButler.on('build-progress', data => {
+    win.webContents.send('itchBuildProgress', data)
+  })
+  vButler.on('build-uploaded', data => {
+    win.webContents.send('itchBuildUploaded', data)
+  })
+}
+clientInit()
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
@@ -108,9 +126,38 @@ ipcMain.on('appDirectory', async (e, app) => {
       'createDirectory'
     ]
   })
+  
   e.returnValue = canceled ? null : filePaths[0]
 })
 
 ipcMain.on('openDirectory', (e, dir) => {
   exec(`start "" "${ dir }"`)
+})
+
+ipcMain.on('itchGetLogin', _ => {
+  win.webContents.send('itchGetLogin', vButler.loggedIn)
+})
+
+ipcMain.on('itchLogin', async _ => {
+  await vButler.login()
+  win.webContents.send('itchGetLogin', vButler.loggedIn)
+})
+
+ipcMain.on('itchLogout', async _ => {
+  await vButler.logout()
+  win.webContents.send('itchGetLogin', vButler.loggedIn)
+})
+
+ipcMain.on('buildItch', (e, app) => {
+  let option = app.options['ITCH']
+  if (!option || !option.active) return
+
+  let arches = []
+  if (option['arch-win']) arches.push('win')
+  if (option['arch-osx']) arches.push('osx')
+  if (option['arch-linux']) arches.push('linux')
+
+  vButler.push(app.dir, option.id, arches).catch(e => {
+    console.error(e)
+  })
 })

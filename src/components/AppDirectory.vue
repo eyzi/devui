@@ -40,8 +40,10 @@ export default {
 		},
 		setAppDirectory() {
 			let dir = window.ipcRenderer.sendSync('appDirectory', {name: this.appName});
-			this.$set(this.app, 'dir', dir)
-			this.updateApp(this.app)
+			if (dir) {
+				this.$set(this.app, 'dir', dir)
+				this.updateApp(this.app)
+			}
 		},
 		openDirectory() {
 			window.ipcRenderer.send('openDirectory', this.app.dir);

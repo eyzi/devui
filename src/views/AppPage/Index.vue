@@ -80,7 +80,20 @@ export default {
 			}
 		},
 		buildApp() {
-			console.log("### BUILD")
+			let oItch = this.app.options['ITCH']
+			if (oItch && oItch.active) {
+				window.ipcRenderer.send('buildItch', this.app)
+			}
+
+			let oDiscord = this.app.options['DISCORD']
+			if (oDiscord && oDiscord.active) {
+				window.ipcRenderer.send('buildDiscord', this.app)
+			}
+
+			let oSteam = this.app.options['STEAM']
+			if (oSteam && oSteam.active) {
+				window.ipcRenderer.send('buildSteam', this.app)
+			}
 		}
 	}
 }
