@@ -286,9 +286,13 @@ ipcMain.on('buildSteam', (e, app) => {
   if (!option || !option.active) return
 
   createSteamWindow()
-  steamWin.webContents.send('clear')
-  steamWin.webContents.send('gameId', option.id)
-  steamWin.webContents.send('buildFile', option.buildFile)
+  steamWin.webContents.once('did-finish-load', function() {
+    steamWin.webContents.send('addInfo', {
+      gameId: option.id,
+      buildFile: option.buildFile
+    })
+  });
+  // steamWin.webContents.openDevTools()
 })
 
 ipcMain.on('steamLoginBuild', (e, {gameId, username, password, code, buildFile}) => {

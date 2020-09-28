@@ -47,6 +47,7 @@ class Client extends EventEmitter {
 			let sdata = data.toString()
 			this.activeBuild.set(gameId, { gameId, percent: 50 })
 			this.emit('build-progress', this.activeBuild.get(gameId))
+			console.log(sdata)
 		})
 		cmd.on('process-close', _ => {
 			this.activeBuild.set(gameId, { gameId, percent: 100 })

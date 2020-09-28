@@ -55,3 +55,25 @@
 [2020-09-27 09:31:39] Requesting 11 apps, 0 packages (meta data, 1024 prev attempts)
 [2020-09-27 09:31:39] Requested 10 app access tokens, 0 received, 10 denied
 [2020-09-27 09:31:39] UpdatesJob: finished OK, nAppsUpdated 0 (0 KB), nPackagesUpdated 0 (0 KB)
+
+
+[2020-09-28 04:17:51] RequestAppInfoUpdate: nNumAppIDs 1
+[2020-09-28 04:17:51] Change number 0->9591520, apps: 0/0, packages: 0/0
+[2020-09-28 04:17:51] Requesting 2422 apps, 2105 packages (meta data, 1024 prev attempts)
+[2020-09-28 04:17:53] UpdatesJob: finished Failure, nAppsUpdated 0 (0 KB), nPackagesUpdated 0 (0 KB)
+
+
+[2020-09-28 04:18:27] RequestAppInfoUpdate: nNumAppIDs 1
+[2020-09-28 04:18:27] Packages changed: 
+[2020-09-28 04:18:27] Apps changed: 489520=9591517,582660=9591187,209870=9591029,291550=9590984,108200=9590978,844870=9590550,443030=9590537,700580=9590465,339610=9590139,451760=9590025,220700=9589955,363890=9589875,690510=9589858,218620=9589453,945360=9588863,223750=9588788,392990=9588763,
+[2020-09-28 04:18:27] Change number 9586989->9591524, apps: 38/2322, packages: 0/426
+[2020-09-28 04:18:27] Requesting 49 apps, 0 packages (meta data, 1024 prev attempts)
+[2020-09-28 04:18:28] UpdatesJob: finished Failure, nAppsUpdated 0 (0 KB), nPackagesUpdated 0 (0 KB)
+
+
+[2020-09-28 04:23:24] RequestAppInfoUpdate: nNumAppIDs 1
+[2020-09-28 04:23:24] Packages changed: 
+[2020-09-28 04:23:24] Apps changed: 489520=9591517,582660=9591187,209870=9591029,291550=9590984,108200=9590978,844870=9590550,443030=9590537,700580=9590465,339610=9590139,451760=9590025,220700=9589955,363890=9589875,690510=9589858,218620=9589453,945360=9588863,223750=9588788,392990=9588763,
+[2020-09-28 04:23:24] Change number 9586989->9591553, apps: 38/2334, packages: 0/426
+[2020-09-28 04:23:24] Requesting 49 apps, 0 packages (meta data, 1024 prev attempts)
+[2020-09-28 04:23:25] UpdatesJob: finished Failure, nAppsUpdated 0 (0 KB), nPackagesUpdated 0 (0 KB)

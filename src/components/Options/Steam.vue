@@ -6,15 +6,15 @@
 		</div>
 		<div v-if="isActive">
 			<hr />
-			<!-- <div>
-				{{ label }} OPTION
+			<div>
+				<span>App ID: </span>
 				<input
 					class="purple-focus"
 					v-model="option.id"
 					placeholder="App Id"
 					@change="save"
 				/>
-			</div> -->
+			</div>
 			<div>
 				<DirectorySelect
 					label="Build File (.vdf)"

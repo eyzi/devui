@@ -148,6 +148,8 @@ class Client extends EventEmitter {
 					this.activeBuild.set(gameId, { gameId })
 					this.emit('build-uploaded', this.activeBuild.get(gameId))
 				}
+				
+				console.log(sdata)
 			})
 			cmd.on('process-close', _ => {
 				this.activeBuild.delete(gameId)

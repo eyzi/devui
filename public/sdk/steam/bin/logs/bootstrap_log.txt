@@ -170,3 +170,51 @@
 [2020-09-27 09:37:11] Performing checksum verification of executable files
 [2020-09-27 09:37:12] Verification complete
 [2020-09-27 09:37:19] Shutdown
+
+
+[2020-09-28 04:17:45] Startup - updater built Aug 28 2020 17:56:02
+[2020-09-28 04:17:46] Checking for update on startup
+[2020-09-28 04:17:46] Checking for available updates...
+[2020-09-28 04:17:46] Downloading manifest: client-download.steampowered.com/client/steam_cmd_win32
+[2020-09-28 04:17:46] Download skipped by HTTP 304 Not Modified
+[2020-09-28 04:17:46] Nothing to do
+[2020-09-28 04:17:46] Verifying installation...
+[2020-09-28 04:17:46] Performing checksum verification of executable files
+[2020-09-28 04:17:47] Verification complete
+[2020-09-28 04:17:53] Shutdown
+
+
+[2020-09-28 04:18:22] Startup - updater built Aug 28 2020 17:56:02
+[2020-09-28 04:18:22] Checking for update on startup
+[2020-09-28 04:18:22] Checking for available updates...
+[2020-09-28 04:18:22] Downloading manifest: client-download.steampowered.com/client/steam_cmd_win32
+[2020-09-28 04:18:23] Download skipped by HTTP 304 Not Modified
+[2020-09-28 04:18:23] Nothing to do
+[2020-09-28 04:18:23] Verifying installation...
+[2020-09-28 04:18:23] Performing checksum verification of executable files
+[2020-09-28 04:18:23] Verification complete
+[2020-09-28 04:18:28] Shutdown
+
+
+[2020-09-28 04:23:19] Startup - updater built Aug 28 2020 17:56:02
+[2020-09-28 04:23:19] Checking for update on startup
+[2020-09-28 04:23:19] Checking for available updates...
+[2020-09-28 04:23:19] Downloading manifest: client-download.steampowered.com/client/steam_cmd_win32
+[2020-09-28 04:23:20] Download skipped by HTTP 304 Not Modified
+[2020-09-28 04:23:20] Nothing to do
+[2020-09-28 04:23:20] Verifying installation...
+[2020-09-28 04:23:20] Performing checksum verification of executable files
+[2020-09-28 04:23:21] Verification complete
+[2020-09-28 04:23:25] Shutdown
+
+
+[2020-09-28 04:35:13] Startup - updater built Aug 28 2020 17:56:02
+[2020-09-28 04:35:13] Checking for update on startup
+[2020-09-28 04:35:13] Checking for available updates...
+[2020-09-28 04:35:13] Downloading manifest: client-download.steampowered.com/client/steam_cmd_win32
+[2020-09-28 04:35:13] Download skipped by HTTP 304 Not Modified
+[2020-09-28 04:35:13] Nothing to do
+[2020-09-28 04:35:13] Verifying installation...
+[2020-09-28 04:35:13] Performing checksum verification of executable files
+[2020-09-28 04:35:14] Verification complete
+[2020-09-28 04:35:18] Shutdown

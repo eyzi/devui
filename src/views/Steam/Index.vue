@@ -33,11 +33,9 @@ export default {
 		window.ipcRenderer.on('clear', () => {
 			this.clear()
 		})
-		window.ipcRenderer.on('buildFile', (e, buildFile) => {
-			this.steamInfo.buildFile = buildFile
-		})
-		window.ipcRenderer.on('gameId', (e, gameId) => {
-			this.steamInfo.gameId = gameId
+		window.ipcRenderer.on('addInfo', (e, info) => {
+			console.log("MORE INFO")
+			this.steamInfo = {...this.steamInfo, ...info}
 		})
 	},
 	methods: {

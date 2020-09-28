@@ -15,7 +15,7 @@
 				<button v-else @click="discordLogin">Login</button>
 			</div>
 			<div>
-				<span>App ID:</span>
+				<span>App ID: </span>
 				<input
 					class="purple-focus"
 					v-model="option.id"

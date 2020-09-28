@@ -142,3 +142,74 @@
 [2020-09-27 09:37:14] [U:1:127548173] [AppID 7] Init cache request complete
 [2020-09-27 09:37:14] Starting sync job
 [2020-09-27 09:37:14] [AppID 7] Starting sync (init,)
+
+
+[2020-09-28 04:17:51] [U:1:127548173] [AppID 7] Init cache request complete
+[2020-09-28 04:17:51] Starting sync job
+[2020-09-28 04:17:51] [AppID 7] Starting sync (init,eval,)
+[2020-09-28 04:17:51] [AppID 7] Need to download file serverbrowser_hist.vdf
+[2020-09-28 04:17:51] [AppID 7] File is in sync sharedconfig.vdf
+[2020-09-28 04:17:51] [AppID 7] Eval complete
+[2020-09-28 04:17:51] Starting sync job
+[2020-09-28 04:17:51] [AppID 7] Starting sync (down,)
+[2020-09-28 04:17:51] [AppID 7] Need to download file serverbrowser_hist.vdf
+[2020-09-28 04:17:51] [AppID 7] File is in sync sharedconfig.vdf
+[2020-09-28 04:17:52] [AppID 7] HTTP download for file 'serverbrowser_hist.vdf' from host 'steamcloud-us-west1.storage.googleapis.com' beginning. . .
+[2020-09-28 04:17:52] [AppID 7] HTTP download for file 'serverbrowser_hist.vdf' from host 'steamcloud-us-west1.storage.googleapis.com' - Success.
+[2020-09-28 04:17:52] [AppID 7] Download OK for file serverbrowser_hist.vdf
+[2020-09-28 04:17:52] [AppID 7] Download complete, result OK
+[2020-09-28 04:17:52] Starting sync job
+[2020-09-28 04:17:52] [AppID 7] Starting sync (eval,)
+[2020-09-28 04:17:52] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2020-09-28 04:17:52] [AppID 7] File is in sync sharedconfig.vdf
+[2020-09-28 04:17:52] [AppID 7] Eval complete
+
+
+[2020-09-28 04:18:24] [U:1:127548173] [AppID 7] Init cache request complete
+[2020-09-28 04:18:24] Starting sync job
+[2020-09-28 04:18:24] [AppID 7] Starting sync (init,)
+[2020-09-28 04:18:26] [U:1:127548173] [AppID 7] Init cache request complete
+[2020-09-28 04:18:26] Starting sync job
+[2020-09-28 04:18:26] [AppID 7] Starting sync (init,)
+[2020-09-28 04:18:27] Starting sync job
+[2020-09-28 04:18:27] [AppID 7] Starting sync (eval,)
+[2020-09-28 04:18:27] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2020-09-28 04:18:27] [AppID 7] File is in sync sharedconfig.vdf
+[2020-09-28 04:18:27] [AppID 7] Eval complete
+[2020-09-28 04:18:27] Starting sync job
+[2020-09-28 04:18:27] [AppID 7] Starting sync (down,)
+[2020-09-28 04:18:27] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2020-09-28 04:18:27] [AppID 7] File is in sync sharedconfig.vdf
+[2020-09-28 04:18:27] [AppID 7] Download complete in build list
+[2020-09-28 04:18:28] Starting sync job
+[2020-09-28 04:18:28] [AppID 7] Starting sync (eval,)
+[2020-09-28 04:18:28] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2020-09-28 04:18:28] [AppID 7] File is in sync sharedconfig.vdf
+[2020-09-28 04:18:28] [AppID 7] Eval complete
+
+
+[2020-09-28 04:23:22] [U:1:127548173] [AppID 7] Init cache request complete
+[2020-09-28 04:23:22] Starting sync job
+[2020-09-28 04:23:22] [AppID 7] Starting sync (init,)
+[2020-09-28 04:23:23] [U:1:127548173] [AppID 7] Init cache request complete
+[2020-09-28 04:23:23] Starting sync job
+[2020-09-28 04:23:23] [AppID 7] Starting sync (init,)
+[2020-09-28 04:23:24] Starting sync job
+[2020-09-28 04:23:24] [AppID 7] Starting sync (eval,)
+[2020-09-28 04:23:24] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2020-09-28 04:23:24] [AppID 7] File is in sync sharedconfig.vdf
+[2020-09-28 04:23:24] [AppID 7] Eval complete
+[2020-09-28 04:23:25] Starting sync job
+[2020-09-28 04:23:25] [AppID 7] Starting sync (eval,down,)
+[2020-09-28 04:23:25] [AppID 7] File is in sync serverbrowser_hist.vdf
+[2020-09-28 04:23:25] [AppID 7] File is in sync sharedconfig.vdf
+[2020-09-28 04:23:25] [AppID 7] Eval complete
+[2020-09-28 04:23:25] [AppID 7] Download complete in build list
+
+
+[2020-09-28 04:35:15] [U:1:127548173] [AppID 7] Init cache request complete
+[2020-09-28 04:35:15] Starting sync job
+[2020-09-28 04:35:15] [AppID 7] Starting sync (init,)
+[2020-09-28 04:35:16] [U:1:127548173] [AppID 7] Init cache request complete
+[2020-09-28 04:35:16] Starting sync job
+[2020-09-28 04:35:16] [AppID 7] Starting sync (init,)
