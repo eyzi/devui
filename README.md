@@ -1,6 +1,6 @@
 # DevUI
 
-A simple UI for a one-click build uploads to game platforms such as Steam, Itch, and Discord. More functionalities and platforms to come.
+Simple UI for a one-click build upload to game platforms such as Steam, Itch, and Discord. More functionalities and platforms to come.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

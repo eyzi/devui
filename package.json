@@ -1,6 +1,6 @@
 {
   "name": "devui",
-  "description": "A simple UI for a one-click build uploads to game platforms",
+  "description": "Simple UI for a one-click build upload to game platforms",
   "author": "Eyzi",
   "version": "0.1.0",
   "private": true,
