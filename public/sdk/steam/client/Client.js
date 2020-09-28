@@ -6,9 +6,8 @@ import { EventEmitter } from 'events'
 import Process from './Process'
 
 class Client extends EventEmitter {
-	constructor(appPath) {
+	constructor() {
 		super()
-		this.appPath = appPath
 		this.bin = this.getBin(arch())
 		this.processes = new Map()
 		this.activeBuild = new Map()
@@ -27,7 +26,8 @@ class Client extends EventEmitter {
 	}
 
 	getBin(arch) {
-		let binPath = resolve(this.appPath, '..', 'src', 'sdk', 'steam', 'bin')
+		let binPath = resolve(__dirname, '..', 'public', 'sdk', 'steam', 'bin')
+		console.log(`Setting SteamCmd bin path to ${binPath}`)
 		switch (arch) {
 			default: return resolve(binPath, 'steamcmd.exe')
 		}
@@ -38,6 +38,7 @@ class Client extends EventEmitter {
 			return reject('Already building')
 		}
 
+		console.log(`BUIDLING ${ gameId } FOR STEAM`)
 		this.activeBuild.set(gameId, { gameId, percent: 20 })
 		this.emit('build-pushing', this.activeBuild.get(gameId))
 

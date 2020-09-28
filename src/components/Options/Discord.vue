@@ -2,31 +2,37 @@
 	<div class="main">
 		<div>
 			<input type="checkbox" :checked="isActive" @change="toggleActive" />
-			<span>{{ label }}</span>
+			<span>Build for Discord</span>
 		</div>
 		<div v-if="isActive">
+			<hr />
 			<div>
-				{{ label }} OPTION
+				<span class="tip">This only uploads to the master branch for now.</span>
+			</div>
+			<div>
+				<span>You need to be logged into Discord Oauth to upload builds </span>
+				<button v-if="loggedIn" @click="discordLogout">Logout</button>
+				<button v-else @click="discordLogin">Login</button>
+			</div>
+			<div>
+				<span>App ID:</span>
 				<input
 					class="purple-focus"
 					v-model="option.id"
 					placeholder="App Id"
 					@change="save"
 				/>
+				<span class="tip">This is the Client ID of your App</span>
 			</div>
 			<div>
-				<span>Config File: </span>
 				<DirectorySelect
+					label="Config File"
 					:dir="option.configFile"
 					:isFolder="false"
 					:selectTitle="`Select config file for ${app.name}`"
 					@select="selectConfigFile"
 					@clear="clearConfigFile"
 				/>
-			</div>
-			<div>
-				<button v-if="loggedIn" @click="discordLogout">Logout</button>
-				<button v-else @click="discordLogin">Login</button>
 			</div>
 			<div v-if="building" class="building-info">
 				<label for="build">Building:</label>
@@ -115,7 +121,10 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-	margin: 0.5em 1em;
+	margin: 1em 0;
+	padding: 0.5em 1em;
+	border-radius: 0.3em;
+	background-color: rgb(199, 222, 243);
 }
 .purple-focus {
 	border: none;
@@ -130,5 +139,10 @@ export default {
 	padding: 0.5em 1em;
 	background-color: rgb(236, 236, 236);
 	border-radius: 0.3em;
+}
+.tip {
+	font-size: 0.8em;
+	color: gray;
+	margin: 0 0.3em;
 }
 </style>

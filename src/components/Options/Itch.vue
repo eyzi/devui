@@ -2,23 +2,27 @@
 	<div class="main">
 		<div>
 			<input type="checkbox" :checked="isActive" @change="toggleActive" />
-			<span>{{ label }}</span>
+			<span>Build for Itch.io</span>
 		</div>
-		<div v-if="isActive">
+		<div class="option-config" v-if="isActive">
+			<hr />
 			<div>
-				{{ label }} OPTION
-				<input
-					class="purple-focus"
-					v-model="option.id"
-					placeholder="App Id"
-					@change="save"
-				/>
-			</div>
-			<div>
+				<span>You need to be logged into Itch Oauth to upload builds </span>
 				<button v-if="loggedIn" @click="itchLogout">Logout</button>
 				<button v-else @click="itchLogin">Login</button>
 			</div>
+			<div>
+				<span>App ID: </span>
+				<input
+					class="purple-focus"
+					v-model="option.id"
+					placeholder="user/game"
+					@change="save"
+				/>
+				<span class="tip">The format is &lt;your_username&gt;/&lt;your_app_name&gt;</span>
+			</div>
 			<div class="arch-list">
+				<span>Platforms: </span>
 				<div class="arch">
 					<input type="checkbox" :checked="forWin" @change="toggleArch($event,'win')" />
 					<span>Windows</span>
@@ -120,7 +124,10 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-	margin: 0.5em 1em;
+	margin: 1em 0;
+	padding: 0.5em 1em;
+	border-radius: 0.3em;
+	background-color: rgb(199, 222, 243);
 }
 .purple-focus {
 	border: none;
@@ -136,5 +143,10 @@ export default {
 		display: inline-block;
 		margin: 0.5em 1em;
 	}
+}
+.tip {
+	font-size: 0.8em;
+	color: gray;
+	margin: 0 0.3em;
 }
 </style>

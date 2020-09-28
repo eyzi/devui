@@ -6,9 +6,8 @@ import { EventEmitter } from 'events'
 import Process from './Process'
 
 class Client extends EventEmitter {
-	constructor(appPath) {
+	constructor() {
 		super()
-		this.appPath = appPath
 		this.bin = this.getBin(arch())
 		this.loggedIn = false
 		this.processes = new Map()
@@ -30,7 +29,8 @@ class Client extends EventEmitter {
 	}
 
 	getBin(arch) {
-		let binPath = resolve(this.appPath, '..', 'src', 'sdk', 'itch', 'bin')
+		let binPath = resolve(__dirname, '..', 'public', 'sdk', 'itch', 'bin')
+		console.log(`Setting SteamCmd bin path to ${binPath}`)
 		switch(arch) {
 			case 'x64':
 				return resolve(binPath, 'butler-win64.exe')
@@ -104,17 +104,14 @@ class Client extends EventEmitter {
 				return reject('Already building')
 			}
 
+			console.log(`BUIDLING ${ gameId } FOR ITCH`)
 			this.activeBuild.set(gameId, { gameId })
+			this.emit('build-pushing', this.activeBuild.get(gameId))
+
 			let channel = arches.join("-")
 			let cmd = this.runCommand('push', directory, `${gameId}:${channel}`)
 			cmd.on('process-data', data => {
 				let sdata = data.toString()
-
-				let pushing = sdata.match(/∙ Pushing/)
-				if (pushing) {
-					this.activeBuild.set(gameId, { gameId })
-					this.emit('build-pushing', this.activeBuild.get(gameId))
-				}
 
 				let progress = sdata.match(/ (?<percent>\d{1,3}\.\d\d)%/)
 				if (progress) {
@@ -127,6 +124,8 @@ class Client extends EventEmitter {
 					this.activeBuild.set(gameId, { gameId })
 					this.emit('build-uploaded', this.activeBuild.get(gameId))
 				}
+
+				console.log(sdata)
 			})
 
 			cmd.on('process-close', _ => {

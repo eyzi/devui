@@ -76,7 +76,7 @@ export default {
 }
 
 .btn-shortcut {
-	color: rgb(54, 98, 163);
+	color: rgb(108, 29, 145);
 	font-size: 0.7em;
 }
 </style>

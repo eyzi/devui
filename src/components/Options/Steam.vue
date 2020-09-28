@@ -2,10 +2,11 @@
 	<div class="main">
 		<div>
 			<input type="checkbox" :checked="isActive" @change="toggleActive" />
-			<span>{{ label }}</span>
+			<span>Build for Steam</span>
 		</div>
 		<div v-if="isActive">
-			<div>
+			<hr />
+			<!-- <div>
 				{{ label }} OPTION
 				<input
 					class="purple-focus"
@@ -13,10 +14,10 @@
 					placeholder="App Id"
 					@change="save"
 				/>
-			</div>
+			</div> -->
 			<div>
-				<span>Build File: </span>
 				<DirectorySelect
+					label="Build File (.vdf)"
 					:dir="option.buildFile"
 					:isFolder="false"
 					:selectTitle="`Select build file (*.vdf) for ${app.name}`"
@@ -100,7 +101,10 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-	margin: 0.5em 1em;
+	margin: 1em 0;
+	padding: 0.5em 1em;
+	border-radius: 0.3em;
+	background-color: rgb(199, 222, 243);
 }
 .purple-focus {
 	border: none;

@@ -8,8 +8,8 @@
 			>
 				AppList
 			</span>
-			<span> &lt; </span>
-			<span>{{ app.name || "Unnamed" }}</span>
+			<span class="pathsep">/</span>
+			<span>{{ app.name || "&lt;Unnamed&gt;" }}</span>
 		</div>
 		<div class="app-info">
 			<div class="app-name">
@@ -21,6 +21,7 @@
 				/>
 			</div>
 			<DirectorySelect
+				label="App Directory"
 				:dir="app.dir"
 				:isFolder="true"
 				:selectTitle="`Select Directory for ${app.name}`"
@@ -34,8 +35,8 @@
 			</div>
 		</div>
 		<div class="actions">
-			<button @click="buildApp">Build</button>
-			<button @click="deleteApp">Delete</button>
+			<button @click="buildApp">📤 Build</button>
+			<button @click="deleteApp">🗑️ Delete</button>
 		</div>
 	</div>
 </template>
@@ -79,7 +80,7 @@ export default {
 			this.updateApp(this.app)
 		},
 		deleteApp() {
-			let confirmDelete = window.ipcRenderer.sendSync('confirmDelete', this.app);
+			let confirmDelete = window.ipcRenderer.sendSync('confirmDelete', {...this.app, dialogType: 'warning'});
 			if (confirmDelete) {
 				this.removeApp(this.app.id)
 				this.gotoHome()
@@ -115,7 +116,7 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-	padding: 0.2em 0.5em;
+	padding: 0.5em 1em;
 }
 .underline-hover {
 	border-bottom: 1px solid none;
@@ -123,6 +124,11 @@ export default {
 
 	&:hover {
 		border-bottom: 1px solid rgb(182, 91, 218);
+	}
+
+	&:active,
+	&:focus {
+		outline: none;
 	}
 }
 .purple-focus {
@@ -134,10 +140,35 @@ export default {
 		border-bottom: 1px solid rgb(182, 91, 218);
 	}
 }
-.actions > button {
-	margin: 0.2em;
+.actions {
+	button {
+		cursor: pointer;
+		margin: 0.3em;
+		padding: 0.2em 0.5em;
+		border: none;
+		border-radius: 0.3em;
+		background:rgb(223, 180, 240);
+
+		&:hover,
+		&:active,
+		&:focus {
+			background: rgb(182, 130, 202);
+			outline: none;
+		}
+	}
 }
 .app-name {
-	margin: 0.5em 1em;
+	margin: 1.2em;
+	text-align: center;
+
+	input {
+		font-size: 1.5em;
+		text-align: center;
+		color: rgb(164, 71, 201);
+	}
+}
+.pathsep {
+	display: inline-block;
+	margin: 0 0.5em;
 }
 </style>

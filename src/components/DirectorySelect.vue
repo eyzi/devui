@@ -1,20 +1,13 @@
 <template>
-	<div class="main">
-		<div class="dir-block">{{ dir || "&lt;No Directory&gt;" }}</div>
-		<div class="actions">
-			<button class="action-btn" @click="browse">
-				<div class="btn-label">Browse</div>
-				<div class="btn-shortcut"></div>
-			</button>
-			<button v-if="dir" class="action-btn" @click="clear">
-				<div class="btn-label">Clear</div>
-				<div class="btn-shortcut"></div>
-			</button>
-			<button v-if="dir" class="action-btn" @click="open">
-				<div class="btn-label">Open</div>
-				<div class="btn-shortcut"></div>
-			</button>
-		</div>
+	<div class="main" @click="browse">
+		<div class="dir-label">{{ label || `Select ${ isFolder ? 'Folder' : 'File' }` }}</div>
+		<div class="dir-box">
+			<div class="dir-block">{{ dir || "&lt;Empty&gt;" }}</div>
+			<div v-if="dir" class="dir-actions">
+				<button @click.stop="open" title="Open">📂</button>
+				<button @click.stop="clear" title="Clear">❌</button>
+			</div>
+		</div>		
 	</div>
 </template>
 
@@ -23,7 +16,8 @@ export default {
 	props: [
 		'dir',
 		'isFolder',
-		'selectTitle'
+		'selectTitle',
+		'label'
 	],
 	methods: {
 		browse() {
@@ -51,14 +45,50 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-	margin: 1em 0.5em;
+	padding: 0.3em 0.7em;
+	border-radius: 0.3em;
+	cursor: pointer;
+	color: white;
+	background-color: rgb(175, 83, 175) !important;
+	transition: background-color .2s;
+
+	&:hover {
+		background-color: rgb(160, 57, 160) !important;
+	}
 }
-.dir-block {
-	background-color: rgb(233, 233, 233);
-	border-radius: 0.5em;
-	padding: 0.5em 1em;
+.dir-label {
+	font-size: 0.7em;
+	margin: 0 3em;
 }
-.actions > button {
-	margin: 0.2em;
+.dir-box {
+	display: flex;
+	flex-direction: row;
+
+	.dir-block {
+		margin: 0.3em;
+		font-size: 1.1em;
+		flex: 1;
+		font-family: monospace;
+	}
+
+	.dir-actions {
+		text-align: right;
+		width: 6em;
+		button {
+			cursor: pointer;
+			margin: 0.3em;
+			padding: 0.2em;
+			border: none;
+			border-radius: 0.3em;
+			background: white;
+
+			&:hover,
+			&:active,
+			&:focus {
+				background: rgb(221, 221, 221);
+				outline: none;
+			}
+		}
+	}
 }
 </style>

@@ -8,9 +8,8 @@ import Process from './Process'
 import Application from './Application'
 
 class Client extends EventEmitter {
-	constructor(appPath) {
+	constructor() {
 		super()
-		this.appPath = appPath
 		this.bin = this.getBin(arch())
 		this.loggedIn = false
 		this.credFile = [...homedir().split(sep), '.dispatch', 'credentials.json'].join(sep)
@@ -33,7 +32,8 @@ class Client extends EventEmitter {
 	}
 
 	getBin(arch) {
-		let binPath = resolve(this.appPath, '..', 'src', 'sdk', 'discord', 'bin')
+		let binPath = resolve(__dirname, '..', 'public', 'sdk', 'discord', 'bin')
+		console.log(`Setting SteamCmd bin path to ${binPath}`)
 		switch(arch) {
 			case 'x64':
 				return resolve(binPath, 'dispatch-win64.exe')
@@ -118,6 +118,7 @@ class Client extends EventEmitter {
 				return reject('Already building')
 			}
 
+			console.log(`BUIDLING ${ gameId } FOR DISCORD`)
 			this.activeBuild.set(gameId, { gameId })
 
 			let masterBranchId = await this.getMasterBranchId(gameId).catch(console.error)

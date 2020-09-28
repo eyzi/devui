@@ -1,29 +1,11 @@
-# devui
+# DevUI
 
-## Project setup
-```
-npm install
-```
+A simple UI for a one-click build uploads to game platforms such as Steam, Itch, and Discord. More functionalities and platforms to come.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Please make sure to update tests as appropriate.
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
