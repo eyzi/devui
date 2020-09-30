@@ -2,16 +2,19 @@
 	<div class="main">
 		<AppAdder />
 		<AppList />
+		<StatusBar />
 	</div>
 </template>
 
 <script>
-import AppAdder from '@/components/AppAdder.vue';
-import AppList from '@/components/AppList.vue';
+import AppAdder from '@/components/App/AppAdder.vue'
+import AppList from '@/components/App/AppList.vue'
+import StatusBar from '@/components/Common/StatusBar.vue'
 export default {
 	components: {
 		AppAdder,
-		AppList
+		AppList,
+		StatusBar
 	}
 }
 </script>
@@ -21,5 +24,6 @@ export default {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding-bottom: 30px;
 }
 </style>

@@ -2,18 +2,10 @@
 	<div class="main">
 		<div>
 			<input type="checkbox" :checked="isActive" @change="toggleActive" />
-			<span>Build for Discord</span>
+			<span>Build for Steam</span>
 		</div>
 		<div v-if="isActive">
 			<hr />
-			<div>
-				<span class="tip">This only uploads to the master branch for now.</span>
-			</div>
-			<div>
-				<span>You need to be logged into Discord Oauth to upload builds </span>
-				<button v-if="loggedIn" @click="discordLogout">Logout</button>
-				<button v-else @click="discordLogin">Login</button>
-			</div>
 			<div>
 				<span>App ID: </span>
 				<input
@@ -22,16 +14,15 @@
 					placeholder="App Id"
 					@change="save"
 				/>
-				<span class="tip">This is the Client ID of your App</span>
 			</div>
 			<div>
 				<DirectorySelect
-					label="Config File"
-					:dir="option.configFile"
+					label="Build File (.vdf)"
+					:dir="option.buildFile"
 					:isFolder="false"
-					:selectTitle="`Select config file for ${app.name}`"
-					@select="selectConfigFile"
-					@clear="clearConfigFile"
+					:selectTitle="`Select build file (*.vdf) for ${app.name}`"
+					@select="selectBuildFile"
+					@clear="clearBuildFile"
 				/>
 			</div>
 			<div v-if="building" class="building-info">
@@ -44,7 +35,8 @@
 
 <script>
 import { mapActions } from 'vuex'
-import DirectorySelect from '@/components/DirectorySelect.vue';
+import BuildBus from '@/components/Buses/BuildBus.js'
+import DirectorySelect from '@/components/Common/DirectorySelect.vue'
 export default {
 	components: {
 		DirectorySelect
@@ -53,8 +45,7 @@ export default {
 		'app'
 	],
 	data: ()=>({
-		label: 'DISCORD',
-		loggedIn: true,
+		label: 'STEAM',
 		building: null
 	}),
 	mounted() {
@@ -64,20 +55,20 @@ export default {
 		if (typeof this.option.active === 'undefined')
 			this.$set(this.app.options[this.label], 'active', false)
 		
-		window.ipcRenderer.on('discordGetLogin', (e, loggedIn) => {
-			this.loggedIn = loggedIn
+		BuildBus.$on('build', () => {
+			this.build()
 		})
-		window.ipcRenderer.send('discordGetLogin')
-
-		window.ipcRenderer.on('discordBuildStarted', (e, data) => {
+		
+		window.ipcRenderer.on('steamBuildStarted', (e, data) => {
 			if (data.gameId !== this.option.id) return
 			this.building = 0
 		})
-		window.ipcRenderer.on('discordBuildProgress', (e, data) => {
+		window.ipcRenderer.on('steamBuildProgress', (e, data) => {
 			if (data.gameId !== this.option.id) return
+			console.log(data.percent)
 			this.building = data.percent
 		})
-		window.ipcRenderer.on('discordBuildUploaded', (e, data) => {
+		window.ipcRenderer.on('steamBuildUploaded', (e, data) => {
 			if (data.gameId !== this.option.id) return
 			this.building = null
 		})
@@ -101,18 +92,17 @@ export default {
 			this.$set(this.app.options[this.label], 'active', e.target.checked)
 			this.save()
 		},
-		discordLogout() {
-			window.ipcRenderer.send('discordLogout')
+		build() {
+			if (this.option && this.option.active) {
+				window.ipcRenderer.send('buildSteam', this.app)
+			}
 		},
-		discordLogin() {
-			window.ipcRenderer.send('discordLogin')
-		},
-		selectConfigFile(dir) {
-			this.$set(this.app.options[this.label], 'configFile', dir)
+		selectBuildFile(dir) {
+			this.$set(this.app.options[this.label], 'buildFile', dir)
 			this.save()
 		},
-		clearConfigFile() {
-			this.$set(this.app.options[this.label], 'configFile', null)
+		clearBuildFile() {
+			this.$set(this.app.options[this.label], 'buildFile', null)
 			this.save()
 		}
 	}
@@ -134,15 +124,5 @@ export default {
 		outline: none;
 		border-bottom: 1px solid rgb(182, 91, 218);
 	}
-}
-.config-file {
-	padding: 0.5em 1em;
-	background-color: rgb(236, 236, 236);
-	border-radius: 0.3em;
-}
-.tip {
-	font-size: 0.8em;
-	color: gray;
-	margin: 0 0.3em;
 }
 </style>

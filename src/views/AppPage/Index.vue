@@ -38,18 +38,22 @@
 			<button @click="buildApp">📤 Build</button>
 			<button @click="deleteApp">🗑️ Delete</button>
 		</div>
+		<StatusBar />
 	</div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import DirectorySelect from '@/components/DirectorySelect.vue';
-import OptionItch from '@/components/Options/Itch.vue';
-import OptionDiscord from '@/components/Options/Discord.vue';
-import OptionSteam from '@/components/Options/Steam.vue';
+import BuildBus from '@/components/Buses/BuildBus.js'
+import DirectorySelect from '@/components/Common/DirectorySelect.vue'
+import StatusBar from '@/components/Common/StatusBar.vue'
+import OptionItch from '@/components/BuildOptions/Itch.vue'
+import OptionDiscord from '@/components/BuildOptions/Discord.vue'
+import OptionSteam from '@/components/BuildOptions/Steam.vue'
 export default {
 	components: {
 		DirectorySelect,
+		StatusBar,
 		OptionItch,
 		OptionDiscord,
 		OptionSteam
@@ -87,20 +91,7 @@ export default {
 			}
 		},
 		buildApp() {
-			let oItch = this.app.options['ITCH']
-			if (oItch && oItch.active) {
-				window.ipcRenderer.send('buildItch', this.app)
-			}
-
-			let oDiscord = this.app.options['DISCORD']
-			if (oDiscord && oDiscord.active) {
-				window.ipcRenderer.send('buildDiscord', this.app)
-			}
-
-			let oSteam = this.app.options['STEAM']
-			if (oSteam && oSteam.active) {
-				window.ipcRenderer.send('buildSteam', this.app)
-			}
+			BuildBus.$emit('build')
 		},
 		selectAppDir(dir) {
 			this.$set(this.app, 'dir', dir)
@@ -116,7 +107,7 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-	padding: 0.5em 1em;
+	padding: 0.5em 1em 2.5em;
 }
 .underline-hover {
 	border-bottom: 1px solid none;

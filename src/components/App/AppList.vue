@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import AppBarDisplay from '@/components/AppBarDisplay.vue';
+import AppBarDisplay from '@/components/App/AppBarDisplay.vue';
 import { mapGetters } from 'vuex'
 export default {
 	components: {

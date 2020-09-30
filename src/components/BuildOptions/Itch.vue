@@ -7,9 +7,9 @@
 		<div class="option-config" v-if="isActive">
 			<hr />
 			<div>
-				<span>You need to be logged into Itch Oauth to upload builds </span>
-				<button v-if="loggedIn" @click="itchLogout">Logout</button>
-				<button v-else @click="itchLogin">Login</button>
+				<span>You need to be logged into Itch Oauth to upload builds</span>
+				<!-- <button v-if="loggedIn" @click="itchLogout">Logout</button>
+				<button v-else @click="itchLogin">Login</button> -->
 			</div>
 			<div>
 				<span>App ID: </span>
@@ -46,6 +46,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import BuildBus from '@/components/Buses/BuildBus.js'
 export default {
 	props: [
 		'app'
@@ -61,6 +62,10 @@ export default {
 
 		if (typeof this.option.active === 'undefined')
 			this.$set(this.app.options[this.label], 'active', false)
+
+		BuildBus.$on('build', () => {
+			this.build()
+		})
 		
 		window.ipcRenderer.on('itchGetLogin', (e, loggedIn) => {
 			this.loggedIn = loggedIn
@@ -107,6 +112,11 @@ export default {
 		toggleActive(e) {
 			this.$set(this.app.options[this.label], 'active', e.target.checked)
 			this.save()
+		},
+		build() {
+			if (this.option && this.option.active && this.loggedIn) {
+				window.ipcRenderer.send('buildItch', this.app)
+			}
 		},
 		toggleArch(e, arch) {
 			this.$set(this.app.options[this.label], `arch-${arch}`, e.target.checked)
