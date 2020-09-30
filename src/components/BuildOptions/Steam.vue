@@ -65,7 +65,6 @@ export default {
 		})
 		window.ipcRenderer.on('steamBuildProgress', (e, data) => {
 			if (data.gameId !== this.option.id) return
-			console.log(data.percent)
 			this.building = data.percent
 		})
 		window.ipcRenderer.on('steamBuildUploaded', (e, data) => {
